@@ -1,0 +1,16 @@
+.wrapper {
+background-color: aqua;
+width: 600px;
+height: 600px;
+}
+
+.square {
+color: lightgrey;
+width: 37.5px;
+height: 37.5px ;
+}
+
+/* ref - 37.5 
+use of inverted margin
+*/
+
