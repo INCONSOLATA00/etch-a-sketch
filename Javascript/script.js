@@ -4,6 +4,6 @@ square.className = "square";
 
 (() => {
 for(i = 0; i < 16; i++) {
-wrapper.append
+wrapper.append(square);
 }
 })();

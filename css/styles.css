@@ -4,8 +4,11 @@ width: 600px;
 height: 600px;
 }
 
-.square {
-color: lightgrey;
+.square { /* see overlap */
+display: flex;
+align-content: flex-start;
+
+background-color: lightgrey;
 width: 37.5px;
 height: 37.5px ;
 }
