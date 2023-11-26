@@ -1,19 +1,10 @@
 .wrapper {
+display: flex;
+flex-wrap: wrap;
+
 background-color: aqua;
 width: 600px;
 height: 600px;
 }
 
-.square { /* see overlap */
-display: flex;
-align-content: flex-start;
-
-background-color: lightgrey;
-width: 37.5px;
-height: 37.5px ;
-}
-
-/* ref - 37.5 
-use of inverted margin
-*/
 
