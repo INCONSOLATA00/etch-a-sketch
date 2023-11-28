@@ -1,4 +1,5 @@
 const wrapper = document.querySelector('.wrapper');
+const button = document.querySelectorAll('button');
 
 (() => {
 for(let i = 0; i < 16 * 16; i++) 
@@ -16,13 +17,20 @@ background-color: lightgrey;
 `
 wrapper.appendChild(square);
 
-square.addEventListener('mouseover', alsoSquare)
+square.addEventListener('mouseover', alsoSquare);
 function alsoSquare(e) {
 console.log(`runs ${e.target}`);   
 }
+square.addEventListener('mousedown', squareEngaged);
+squareEngaged = setInterval(function() {
+console.log('indice held');
+}, 50);
 }
 
 
+
 })();
+
+
 
 
