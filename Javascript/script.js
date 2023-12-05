@@ -1,7 +1,6 @@
 const wrapper = document.querySelector('.wrapper');
 const button = document.querySelectorAll('button');
-let array = [];
-
+let status = false;
 
 for (let i = 0; i < 16 * 16; i++) {
     const square = document.createElement('div');
@@ -14,38 +13,20 @@ height: 37.5px;
 width: 37.5px;
 background-color: lightgrey;
 `
-    array.push(square);
+
     wrapper.appendChild(square);
-
-    square.addEventListener('mouseover', alsoSquare);
-
-    function alsoSquare(e) {
-    console.log(`runs ${e.target.id}`);
-    }
+    square.addEventListener('mouseover', function(e) {
+        if(updateStatus == true) {
+            document.getElementById(e.target.id).style.backgroundColor = 'black';
+        }
+    })
 }
 
-let theInterval;
-let clickEvent = new Event('click');
+window.addEventListener('mousedown', function() {
+updateStatus = true;
+}); 
+window.addEventListener('mouseup', function() {
+updateStatus = false;
+});
 
-function squareEngaged(e) {
-
-    let targetId = e.target.id;
-    if (targetId.startsWith('div')) {
-
-    theInterval = setInterval(() => {
-        console.log('mouse held');
-        document.getElementById(e.target.id).dispatchEvent(clickEvent); // WORKS
-        document.getElementById(e.target.id).style.backgroundColor = 'red';
-    }, 300);
-}}
-
-function squareDisengaged() {
-    console.log('(!)mouse held');
-    clearInterval(theInterval);
-}
-
-
-window.addEventListener('mousedown', squareEngaged);
-window.addEventListener('mouseup', squareDisengaged);
-
-//Pseudo: on mousedown if(div.target.id ==...
+// needs declare rule for disable mouse-grab*
