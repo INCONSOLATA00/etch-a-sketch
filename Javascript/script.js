@@ -13,23 +13,22 @@ height: 37.5px;
 width: 37.5px;
 background-color: lightgrey;
 `
+let theInterval;
 
-const squareEngaged = () => {
-    setInterval(function () { // initialize; - *IS RUN* 2ND
-        console.log('indice held');
-    }, 50);
+function squareEngaged() {
+// if(theInterval) { clearInterval(theInterval);}
+theInterval = setInterval(() => { console.log('mouse held');
+},350); 
 }
 
-if (square.onmousedown == true) {
-    console.log('reached');
-    square.addEventListener('mouseup', clearInterval(squareEngaged)); // listen for onmouseup after onmousedown
+function squareDisengaged() {
+console.log('(!)mouse held');
+clearInterval(theInterval);    
 }
-
-function clearInterval() { // *IS NOT RUN*
-    clearInterval(squareEngaged);
+if (document.onmousedown == false) { // *prevent instance overlap*
+document.addEventListener('mousedown', squareEngaged);
 }
-
-square.addEventListener('mousedown', squareEngaged); // *IS RUN* 1ST
+document.addEventListener('mouseup', squareDisengaged);
 
         wrapper.appendChild(square);
         square.addEventListener('mouseover', alsoSquare);
