@@ -16,6 +16,10 @@ background-color: lightgrey;
 
     wrapper.appendChild(square);
 
+    square.addEventListener('dragstart',(e)=>{
+        e.preventDefault();
+      })
+
     square.addEventListener('mousedown', function(e) {
         document.getElementById(e.target.id).style.backgroundColor = 'black';
     })
