@@ -1,6 +1,6 @@
 const wrapper = document.querySelector('.wrapper');
 const button = document.querySelectorAll('button');
-let status = false;
+let updateStatus;
 
 for (let i = 0; i < 16 * 16; i++) {
     const square = document.createElement('div');
@@ -15,6 +15,11 @@ background-color: lightgrey;
 `
 
     wrapper.appendChild(square);
+
+    square.addEventListener('mousedown', function(e) {
+        document.getElementById(e.target.id).style.backgroundColor = 'black';
+    })
+
     square.addEventListener('mouseover', function(e) {
         if(updateStatus == true) {
             document.getElementById(e.target.id).style.backgroundColor = 'black';
