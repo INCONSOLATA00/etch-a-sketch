@@ -1,16 +1,21 @@
 const wrapper = document.querySelector('.wrapper');
 const button = document.querySelectorAll('button');
+
 let updateStatus;
 
-for (let i = 0; i < 16 * 16; i++) {
+let sqrMult = 64;
+let sqrAmt = sqrMult * sqrMult;
+let sqrSize = 1400 / sqrMult; 
+
+for (let i = 0; i < sqrAmt; i++) {
     const square = document.createElement('div');
 
     square.id = 'div' + i;
     square.style.cssText =
         `
 display: flex;
-height: 37.5px;
-width: 37.5px;
+height: ${sqrSize / 2}px;
+width: ${sqrSize / 2}px;
 background-color: lightgrey;
 `
 
