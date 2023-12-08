@@ -1,11 +1,9 @@
-const wrapper = document.querySelector('.wrapper');
-const button = document.querySelectorAll('button');
-
+const wrapper = document.querySelector('.primary-wrapper');
 let updateStatus;
 
-let sqrMult = 64;
+let sqrMult = 10;
 let sqrAmt = sqrMult * sqrMult;
-let sqrSize = 1400 / sqrMult; 
+let sqrSize = 1200 / sqrMult; 
 
 for (let i = 0; i < sqrAmt; i++) {
     const square = document.createElement('div');
@@ -42,5 +40,3 @@ updateStatus = true;
 window.addEventListener('mouseup', function() {
 updateStatus = false;
 });
-
-// needs declare rule for disable mouse-grab*
