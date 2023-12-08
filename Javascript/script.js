@@ -5,6 +5,12 @@ let sqrMult = 10;
 let sqrAmt = sqrMult * sqrMult;
 let sqrSize = 1200 / sqrMult; 
 
+var slider = document.querySelector("#alsoRange");
+slider.oninput = function() {
+sqrMult = this.value;
+console.log(sqrMult);
+}
+
 for (let i = 0; i < sqrAmt; i++) {
     const square = document.createElement('div');
 
