@@ -55,8 +55,9 @@ sqrMult = this.value;
 for (let i = 0; i < sqrAmt; i++) {
 let squareId = document.getElementById('div' + i);
 console.log(squareId);
-// wrapper.parentNode.removeChild(squareId); // see also parent element
-}
+if(squareId) {
+square.parentNode.removeChild(squareId); // problem child
+}}
 console.log(sqrMult);
 }
 
