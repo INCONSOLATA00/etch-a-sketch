@@ -19,7 +19,7 @@ width: ${sqrSize / 2}px;
 background-color: lightgrey;
 `
 
-    wrapper.appendChild(square); // despite appending square, you are actually appending it's new designation of square.id ^
+    wrapper.appendChild(square); // despite appending square; actually appending it's new designation of square.id
 
     square.addEventListener('dragstart',(e)=>{
         e.preventDefault();
@@ -47,12 +47,14 @@ updateStatus = false;
 
 var slider = document.querySelector("#alsoRange");
 slider.oninput = function() {
-sqrMult = this.value;
 
-for (let i = 0; i < sqrAmt; i++) { // removes the initial value; does not properly reflect new changes (limited exception)
+for (let i = 0; i < sqrAmt; i++) {
 
-let squareId = document.getElementById('div' + i); // the new designation is declared as a variable here
+let squareId = document.getElementById('div' + i);
 if(squareId) {
+
+// remove event listener(s)
+
 square.parentNode.removeChild(squareId); 
 }}
 
@@ -63,14 +65,14 @@ square.id = 'div' + i;
 square.style.cssText =
         `
 display: flex;
-height: ${sqrSize / 2}px;
-width: ${sqrSize / 2}px;
+height: ${1200 / slider.value / 2}px;
+width: ${1200 / slider.value / 2}px;
 background-color: lightgrey;
 `
 
-wrapper.appendChild(square); // despite appending square, you are actually appending it's new designation of square.id ^
 
-}
-console.log(slider.value * slider.value);
-}
+
+wrapper.appendChild(square);
+
+}}
 
