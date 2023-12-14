@@ -12,16 +12,18 @@ let elements;
 function yeet(){
 while(elements.length > 0){
 square.parentNode.removeChild(elements[0]);
-}
-}
+
+square.removeEventListener('dragstart', l1);
+square.removeEventListener('mousedown', l2);
+square.removeEventListener('mouseover', l3);
+}}
 
 for (let i = 0; i < sqrAmt; i++) {
 
     square = document.createElement('div');
-    square.className = 'dynamicDiv'; // initializer ... should technically work on later instances
-
+    square.className = 'dynamicDiv';
     elements = document.getElementsByClassName('dynamicDiv');
-    square.id = 'div' + i;
+    square.id = 'div' + i; // is static
     square.style.cssText =
         `
 display: flex;
@@ -62,11 +64,7 @@ slider.oninput = function() {
 for (let i = 0; i < slider.value * slider.value; i++) {
 
 let squareId = document.getElementById('div' + i);
-if(squareId) { // save for later functionality*
-
-square.removeEventListener('dragstart', l1);
-square.removeEventListener('mousedown', l2);
-square.removeEventListener('mouseover', l3);
+if(squareId) { // save for later functionality* - check integrity
 yeet();
 }}
 
@@ -93,4 +91,4 @@ square.addEventListener('mouseover', l3);
 
 console.log(` slider pos ${slider.value}`);
 }}
-console.log(` slider true ${slider.value * slider.value}`);
+console.log(` slider init ${slider.value * slider.value}`);
