@@ -16,7 +16,7 @@ if(toggleProgressive == true) {
 toggleProgressive = false;
 console.log(toggleProgressive);
 
-} else if(toggleProgressive == false) { // upate status is responsible for the mouse down / mouseup events, nothing else*
+} else if(toggleProgressive == false) {
 toggleProgressive = true;
 console.log(toggleProgressive);
 }}
@@ -53,7 +53,7 @@ background-color: lightgrey;
     function l2(e) {
         if(updateStatus == true && toggleProgressive == true) {
             document.getElementById(e.target.id).style.backgroundColor = 'red';
-        } else if(updateStatus == true) { // maybe change to else, I dunno I'm too scared :C
+        } else if(updateStatus == true) {
             document.getElementById(e.target.id).style.backgroundColor = 'black'; // += see shade
         }
     }
@@ -62,7 +62,7 @@ background-color: lightgrey;
     function l3(e) {
         if(updateStatus == true && toggleProgressive == true) {
             document.getElementById(e.target.id).style.backgroundColor = 'red';
-        } else if(updateStatus == true) { // maybe change to else, I dunno I'm too scared :C
+        } else if(updateStatus == true) {
             document.getElementById(e.target.id).style.backgroundColor = 'black'; // += see shade
         }
     }
