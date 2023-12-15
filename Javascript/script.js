@@ -51,15 +51,19 @@ background-color: lightgrey;
     square.addEventListener('dragstart', l1);
     
     function l2(e) {
-        document.getElementById(e.target.id).style.backgroundColor = 'black';
+        if(updateStatus == true && toggleProgressive == true) {
+            document.getElementById(e.target.id).style.backgroundColor = 'red';
+        } else if(updateStatus == true) { // maybe change to else, I dunno I'm too scared :C
+            document.getElementById(e.target.id).style.backgroundColor = 'black'; // += see shade
+        }
     }
     square.addEventListener('mousedown', l2);
     
     function l3(e) {
-        if(updateStatus == true) {
-            document.getElementById(e.target.id).style.backgroundColor = 'black';
-        } else if(updateStatus == true && toggleProgressive == true) { // WAS
-            document.getElementById(e.target.id).style.backgroundColor = 'red'; // += see shade
+        if(updateStatus == true && toggleProgressive == true) {
+            document.getElementById(e.target.id).style.backgroundColor = 'red';
+        } else if(updateStatus == true) { // maybe change to else, I dunno I'm too scared :C
+            document.getElementById(e.target.id).style.backgroundColor = 'black'; // += see shade
         }
     }
     square.addEventListener('mouseover', l3);
