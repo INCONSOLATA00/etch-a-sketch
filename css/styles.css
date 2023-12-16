@@ -6,6 +6,15 @@ flex-direction: column-reverse; /*19.49*/
         
 height: 620px;
 width: 630px;
+margin-top: 52px;
+}
+
+.progressive {
+margin-top: 20px;
+}
+
+.also-progressive {
+margin-top: 20px;
 }
 
 body {
@@ -35,8 +44,8 @@ height: 600px;
 .slider {
 -webkit-appearance: none;  
 appearance: none;
-width: 605px; 
-height: 25px;
+width: 600px; 
+height: 10px;
 background: #999999;
 outline: none;
 opacity: 0.7; /* ??? */
@@ -45,7 +54,7 @@ transition: opacity .2s;
 padding: 0px;
 margin-right: -272.2px;
 margin-left: -272.2px;
-margin-top: 5.2px;
+margin-bottom: 8.75px;
 border-radius: 2px;
 transform: rotate(90deg);
 }
