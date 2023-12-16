@@ -1,3 +1,13 @@
+.tertiary-wrapper {
+display: flex;
+justify-content: center;
+align-items: flex-start; 
+flex-direction: column-reverse; /*19.49*/
+        
+height: 620px;
+width: 630px;
+}
+
 body {
 display: flex;
 justify-content: center;
@@ -20,7 +30,6 @@ display: flex;
 flex-wrap: wrap;
 width: 600px;
 height: 600px;
-background-color: cyan;
 }
 
 .slider {
