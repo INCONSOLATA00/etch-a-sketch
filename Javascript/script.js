@@ -1,24 +1,25 @@
 const wrapper = document.querySelector('.primary-wrapper');
 let slider = document.querySelector("#alsoRange");
 
-let updateStatus;
-let toggleProgressive = true;
-
 let sqrMult = 32;
 let sqrAmt = sqrMult * sqrMult;
-let sqrSize = 1200 / sqrMult; 
+let sqrSize = 1200 / sqrMult;
 
 let square ;
 let elements;
 
+let toggleProgressive = true;
+let updateStatus;
+let color = 'black';
+
 function progressive(){ //  see rgba values*
 if(toggleProgressive == true) {
 toggleProgressive = false;
-console.log(toggleProgressive);
+color = 'red';
 
 } else if(toggleProgressive == false) {
 toggleProgressive = true;
-console.log(toggleProgressive);
+color = 'black';
 }}
 
 function yeet(){
@@ -51,26 +52,24 @@ background-color: lightgrey;
     square.addEventListener('dragstart', l1);
     
     function l2(e) {
-        if(updateStatus == true && toggleProgressive == true) {
-            document.getElementById(e.target.id).style.backgroundColor = 'red';
-        } else if(updateStatus == true) {
-            document.getElementById(e.target.id).style.backgroundColor = 'black'; // += see shade
-        }
+            document.getElementById(e.target.id).style.backgroundColor = color;
+            console.log('runs');
     }
     square.addEventListener('mousedown', l2);
     
     function l3(e) {
         if(updateStatus == true && toggleProgressive == true) {
-            document.getElementById(e.target.id).style.backgroundColor = 'red';
+            document.getElementById(e.target.id).style.backgroundColor = color;
+
         } else if(updateStatus == true) {
-            document.getElementById(e.target.id).style.backgroundColor = 'black'; // += see shade
+            document.getElementById(e.target.id).style.backgroundColor = color;
         }
     }
     square.addEventListener('mouseover', l3);
 }
 
 
-window.addEventListener('mousedown', function() {
+window.addEventListener('mousedown', function() { // may exclusively be for l3
 updateStatus = true;
 }); 
 window.addEventListener('mouseup', function() {
