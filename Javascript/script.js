@@ -52,16 +52,25 @@ width: ${sqrSize / 2}px;
 background-color: transparent;
 `
 
-square.style.opacity = 0.1;
-
-    wrapper.appendChild(square);                    // SEE ABOVE
+    wrapper.appendChild(square);
     
     function l1(e) {
     e.preventDefault();
 }
     square.addEventListener('dragstart', l1);
+    
     function l2(e) {
-            document.getElementById(e.target.id).style.backgroundColor = color;
+
+        let defaultColor = document.getElementById(e.target.id);
+        if(toggleProgressive == false) {
+
+        defaultColor.style.backgroundColor = color;
+        let alsoDefaultColor = +defaultColor.style.opacity;
+        defaultColor.style.opacity = alsoDefaultColor += 0.1;
+        
+        } else if(toggleProgressive == true) {
+        document.getElementById(e.target.id).style.backgroundColor = color;
+        }
     }
     square.addEventListener('mousedown', l2);
     
@@ -111,8 +120,6 @@ height: ${1200 / slider.value / 2}px;
 width: ${1200 / slider.value / 2}px;
 background-color: transparent;
 `
-
-square.style.opacity = 0.1;
 
 wrapper.appendChild(square);                    // SEE ABOVE
 square.addEventListener('dragstart', l1);
