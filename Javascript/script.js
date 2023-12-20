@@ -1,7 +1,11 @@
 
 const alsoProg = document.querySelector('.alsoProg');
+const organic = document.querySelector('.organic');
+
 const wrapper = document.querySelector('.primary-wrapper');
 alsoProg.addEventListener('click', progressive); 
+
+let colors = ['LightSalmon', 'DeepSkyBlue', 'CornflowerBlue', 'LightCyan', 'LightSkyBlue'];
 
 let slider = document.querySelector("#alsoRange");
 let sqrMult = 32;
@@ -12,6 +16,8 @@ let square ;
 let elements;
 
 let toggleProgressive = true;
+let toggleOrganic = true;
+
 let updateStatus;
 let color = '#333333';
 
@@ -29,6 +35,24 @@ color = '#333333';
 
 console.log('disengaged');
 }}
+
+// ---------------------------
+
+function organic(){
+
+if(toggleOrganic == true) {
+toggleOrganic = false;
+color = 'cyan'; 
+
+console.log('engaged');
+
+} else if(toggleOrganic == false) {
+toggleOrganic = true;
+color = '#333333';
+
+}}
+
+// ---------------------------
 
 function yeet(){
 while(elements.length > 0){
@@ -49,7 +73,7 @@ for (let i = 0; i < sqrAmt; i++) {
 display: flex;
 height: ${sqrSize / 2}px;
 width: ${sqrSize / 2}px;
-background-color: transparent;
+background-color: #fafafa;
 `
 
     wrapper.appendChild(square);
@@ -67,7 +91,7 @@ background-color: transparent;
         defaultColor.style.backgroundColor = color;
         let alsoDefaultColor = +defaultColor.style.opacity;
         defaultColor.style.opacity = alsoDefaultColor += 0.1;
-        
+
         } else if(toggleProgressive == true) {
         document.getElementById(e.target.id).style.backgroundColor = color;
         }
@@ -118,7 +142,7 @@ square.style.cssText =
 display: flex;
 height: ${1200 / slider.value / 2}px;
 width: ${1200 / slider.value / 2}px;
-background-color: transparent;
+background-color: #fafafa;
 `
 
 wrapper.appendChild(square);                    // SEE ABOVE
