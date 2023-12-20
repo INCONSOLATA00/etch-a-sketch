@@ -13,19 +13,19 @@ let elements;
 
 let toggleProgressive = true;
 let updateStatus;
-let color = 'black';
+let color = '#333333';
 
 function progressive(){
 
 if(toggleProgressive == true) {
 toggleProgressive = false;
-color = 'cyan';
+color = 'cyan'; 
 
 console.log('engaged');
 
 } else if(toggleProgressive == false) {
 toggleProgressive = true;
-color = 'black';
+color = '#333333';
 
 console.log('disengaged');
 }}
@@ -49,10 +49,12 @@ for (let i = 0; i < sqrAmt; i++) {
 display: flex;
 height: ${sqrSize / 2}px;
 width: ${sqrSize / 2}px;
-background-color: lightgrey;
+background-color: transparent;
 `
 
-    wrapper.appendChild(square); 
+square.style.opacity = 0.1;
+
+    wrapper.appendChild(square);                    // SEE ABOVE
     
     function l1(e) {
     e.preventDefault();
@@ -64,15 +66,19 @@ background-color: lightgrey;
     square.addEventListener('mousedown', l2);
     
     function l3(e) {
+
+        let defaultColor = document.getElementById(e.target.id);
         if(updateStatus == true && toggleProgressive == true) {
-            document.getElementById(e.target.id).style.backgroundColor = color;
+
+            defaultColor.style.backgroundColor = color;
+            defaultColor.style.opacity = 1; 
 
         } else if(updateStatus == true) {
-            document.getElementById(e.target.id).style.backgroundColor = color;
             
-            let newOpacity = +document.getElementById(e.target.id).style.opacity;
-            document.getElementById(e.target.id).style.opacity = newOpacity += 0.1;
-            
+            defaultColor.style.backgroundColor = color;
+            let alsoDefaultColor = +defaultColor.style.opacity;
+            defaultColor.style.opacity = alsoDefaultColor += 0.1;
+
     }}
     square.addEventListener('mouseover', l3);
 }
@@ -103,14 +109,15 @@ square.style.cssText =
 display: flex;
 height: ${1200 / slider.value / 2}px;
 width: ${1200 / slider.value / 2}px;
-background-color: lightgrey;
+background-color: transparent;
 `
 
-wrapper.appendChild(square);
+square.style.opacity = 0.1;
+
+wrapper.appendChild(square);                    // SEE ABOVE
 square.addEventListener('dragstart', l1);
 square.addEventListener('mousedown', l2);
 square.addEventListener('mouseover', l3);
 
 console.log(` slider pos ${slider.value}`);
 }}
-
