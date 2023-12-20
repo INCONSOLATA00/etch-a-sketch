@@ -1,6 +1,9 @@
-const wrapper = document.querySelector('.primary-wrapper');
-let slider = document.querySelector("#alsoRange");
 
+const alsoProg = document.querySelector('.alsoProg');
+const wrapper = document.querySelector('.primary-wrapper');
+alsoProg.addEventListener('click', progressive); 
+
+let slider = document.querySelector("#alsoRange");
 let sqrMult = 32;
 let sqrAmt = sqrMult * sqrMult;
 let sqrSize = 1200 / sqrMult;
@@ -12,14 +15,19 @@ let toggleProgressive = true;
 let updateStatus;
 let color = 'black';
 
-function progressive(){ //  see rgba values*
+function progressive(){
+
 if(toggleProgressive == true) {
 toggleProgressive = false;
-color = 'red';
+color = 'cyan';
+
+console.log('engaged');
 
 } else if(toggleProgressive == false) {
 toggleProgressive = true;
 color = 'black';
+
+console.log('disengaged');
 }}
 
 function yeet(){
@@ -28,8 +36,7 @@ square.parentNode.removeChild(elements[0]);
 
 square.removeEventListener('dragstart', l1);
 square.removeEventListener('mousedown', l2);
-square.removeEventListener('mouseover', l3);
-}}
+square.removeEventListener('mouseover', l3);}}
 
 for (let i = 0; i < sqrAmt; i++) {
 
@@ -44,16 +51,15 @@ height: ${sqrSize / 2}px;
 width: ${sqrSize / 2}px;
 background-color: lightgrey;
 `
+
     wrapper.appendChild(square); 
     
     function l1(e) {
-        e.preventDefault();
+    e.preventDefault();
 }
     square.addEventListener('dragstart', l1);
-    
     function l2(e) {
             document.getElementById(e.target.id).style.backgroundColor = color;
-            console.log('runs');
     }
     square.addEventListener('mousedown', l2);
     
@@ -63,27 +69,27 @@ background-color: lightgrey;
 
         } else if(updateStatus == true) {
             document.getElementById(e.target.id).style.backgroundColor = color;
-        }
-    }
+            
+            let newOpacity = +document.getElementById(e.target.id).style.opacity;
+            document.getElementById(e.target.id).style.opacity = newOpacity += 0.1;
+            
+    }}
     square.addEventListener('mouseover', l3);
 }
 
-
-window.addEventListener('mousedown', function() { // may exclusively be for l3
+window.addEventListener('mousedown', function() {
 updateStatus = true;
 }); 
 window.addEventListener('mouseup', function() {
-updateStatus = false;
-});
+updateStatus = false;});
 
 slider.oninput = function() {
 
 for (let i = 0; i < slider.value * slider.value; i++) {
 
 let squareId = document.getElementById('div' + i);
-if(squareId) { // do unique function for individual id's here
-yeet();
-}}
+if(squareId) {
+yeet();}}
 
 for (let i = 0; i < slider.value * slider.value; i++) {
 
