@@ -1,4 +1,3 @@
-
 const alsoProg = document.querySelector('.progressive');
 const alsoOrganic = document.querySelector('.organic');
 const wrapper = document.querySelector('.see-squares');
@@ -29,9 +28,10 @@ let toggleOrganic = true;
 let updateStatus;
 let color = '#333333';
 
-// ---------------------------
-
 function progressive(){
+toggleOrganic = true;
+alsoOrganic.checked = false;
+
 if(toggleProgressive == true) {
 toggleProgressive = false;
 
@@ -43,9 +43,10 @@ toggleProgressive = true;
 color = '#333333';
 }}
 
-// ---------------------------
-
 function organic(){
+toggleProgressive = true;    
+alsoProg.checked = false;
+
 if(toggleOrganic == true) {
 toggleOrganic = false;
 
@@ -130,7 +131,7 @@ background-color: #fafafa;
         }
 
 }
-    square.addEventListener('mouseover', l3); // SEE HERE
+    square.addEventListener('mouseover', l3);
 }
 
 window.addEventListener('mousedown', function() {
@@ -162,7 +163,7 @@ width: ${1200 / slider.value / 2}px;
 background-color: #fafafa;
 `
 
-wrapper.appendChild(square);                    // SEE ABOVE
+wrapper.appendChild(square);
 square.addEventListener('dragstart', l1);
 square.addEventListener('mousedown', l2);
 square.addEventListener('mouseover', l3);
