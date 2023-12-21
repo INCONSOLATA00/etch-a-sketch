@@ -36,12 +36,10 @@ alsoOrganic.checked = false;
 if(toggleProgressive == true) {
 toggleProgressive = false;
 
-color = 'cyan'; 
+color = '#333333'; 
 
 } else if(toggleProgressive == false) {
 toggleProgressive = true;
-
-color;
 }}
 
 function organic(){
@@ -51,14 +49,12 @@ alsoProg.checked = false;
 
 if(toggleOrganic == true) {
 toggleOrganic = false;
+// see here*
+
 
 } else if(toggleOrganic == false) {
 toggleOrganic = true;
-
-color = '#333333';
 }}
-
-// ---------------------------
 
 function yeet(){
 while(elements.length > 0){
@@ -123,6 +119,11 @@ background-color: #fafafa;
                 defaultColor.style.backgroundColor = alsoColor;
                 defaultColor.style.opacity = 1; 
 
+            } else if (updateStatus == true) {
+
+                defaultColor.style.backgroundColor = '#333333'; // UNIQUE EXCEPTION
+                defaultColor.style.opacity = 1; 
+    
             }
 
         } else if(updateStatus == true && toggleProgressive == false) {
