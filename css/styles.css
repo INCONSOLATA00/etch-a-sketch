@@ -1,4 +1,4 @@
-.tertiary-wrapper {
+.main-wrapper {
 display: flex;
 justify-content: center;
 align-items: flex-start; 
@@ -9,9 +9,9 @@ width: 630px;
 margin-top: 52px;
 }
 
-.organic, .alsoProg {
+.organic, .progressive {
 width: 30px;
-height: 14px;
+height: 40px;
 background-color: white;
 border-radius: 4px;
 vertical-align: middle;
@@ -22,15 +22,11 @@ outline: none;
 cursor: pointer;
 }
 
-.organic:checked, .alsoProg:checked {
+.organic:checked, .progressive:checked {
 background-color: #333333;
 }
 
-.progressive {
-margin-top: 20px;
-}
-
-.also-progressive {
+.buttons {
 display: flex;
 flex-direction: column;
 margin-top: 20px;
@@ -43,7 +39,7 @@ align-items: center;
 height:  750px;
 }
 
-.primary-wrapper {
+.see-squares {
 display: flex;
 flex-wrap: wrap;
 width: 600px;

@@ -1,11 +1,19 @@
 
-const alsoProg = document.querySelector('.alsoProg');
-const organic = document.querySelector('.organic');
+const alsoProg = document.querySelector('.progressive');
+const alsoOrganic = document.querySelector('.organic');
+const wrapper = document.querySelector('.see-squares');
 
-const wrapper = document.querySelector('.primary-wrapper');
 alsoProg.addEventListener('click', progressive); 
+alsoOrganic.addEventListener('click', organic);
+
+function colorSelector(){
+console.log('called');
 
 let colors = ['LightSalmon', 'DeepSkyBlue', 'CornflowerBlue', 'LightCyan', 'LightSkyBlue'];
+let randomColor = Math.floor(Math.random() * 5);
+let newColor = colors[randomColor];
+return newColor;
+}
 
 let slider = document.querySelector("#alsoRange");
 let sqrMult = 32;
@@ -15,41 +23,40 @@ let sqrSize = 1200 / sqrMult;
 let square ;
 let elements;
 
-let toggleProgressive = true;
-let toggleOrganic = true;
+let toggleProgressive;
+let toggleOrganic;
 
 let updateStatus;
 let color = '#333333';
 
-function progressive(){
+// ---------------------------
 
+function progressive(){
+toggleProgressive = true;
 if(toggleProgressive == true) {
 toggleProgressive = false;
-color = 'cyan'; 
 
-console.log('engaged');
+color = 'cyan'; 
 
 } else if(toggleProgressive == false) {
 toggleProgressive = true;
-color = '#333333';
 
-console.log('disengaged');
+color = '#333333';
 }}
 
 // ---------------------------
 
 function organic(){
-
+toggleOrganic = true;
 if(toggleOrganic == true) {
 toggleOrganic = false;
-color = 'cyan'; 
 
-console.log('engaged');
+color = 'orange'; 
 
 } else if(toggleOrganic == false) {
 toggleOrganic = true;
-color = '#333333';
 
+color = '#333333';
 }}
 
 // ---------------------------
@@ -99,21 +106,33 @@ background-color: #fafafa;
     square.addEventListener('mousedown', l2);
     
     function l3(e) {
-
+    // colorSelector(); // TEMP LOCATION
         let defaultColor = document.getElementById(e.target.id);
         if(updateStatus == true && toggleProgressive == true) {
 
             defaultColor.style.backgroundColor = color;
             defaultColor.style.opacity = 1; 
 
-        } else if(updateStatus == true) {
+        } else if(updateStatus == true && toggleProgressive == false) {
             
             defaultColor.style.backgroundColor = color;
             let alsoDefaultColor = +defaultColor.style.opacity;
             defaultColor.style.opacity = alsoDefaultColor += 0.1;
 
-    }}
-    square.addEventListener('mouseover', l3);
+        } else if (updateStatus == true && toggleOrganic == true) {
+            
+            defaultColor.style.backgroundColor = newColor;
+            defaultColor.style.opacity = 1; 
+
+        } else if (updateStatus == true) {
+
+            defaultColor.style.backgroundColor = '#333333'; // UNIQUE EXCEPTION
+            defaultColor.style.opacity = 1; 
+
+        }
+
+}
+    square.addEventListener('mouseenter', l3); // SEE HERE
 }
 
 window.addEventListener('mousedown', function() {
