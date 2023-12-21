@@ -29,6 +29,7 @@ let updateStatus;
 let color = '#333333';
 
 function progressive(){
+
 toggleOrganic = true;
 alsoOrganic.checked = false;
 
@@ -40,17 +41,16 @@ color = 'cyan';
 } else if(toggleProgressive == false) {
 toggleProgressive = true;
 
-color = '#333333';
+color;
 }}
 
 function organic(){
+
 toggleProgressive = true;    
 alsoProg.checked = false;
 
 if(toggleOrganic == true) {
 toggleOrganic = false;
-
-color = 'orange'; 
 
 } else if(toggleOrganic == false) {
 toggleOrganic = true;
@@ -104,24 +104,32 @@ background-color: #fafafa;
     }
     square.addEventListener('mousedown', l2);
     
-    function l3(e) {
-    // colorSelector(); // TEMP LOCATION
+    function l3(e, alsoColor) {
+
         let defaultColor = document.getElementById(e.target.id);
         if(updateStatus == true && toggleProgressive == true) {
 
             defaultColor.style.backgroundColor = color;
             defaultColor.style.opacity = 1; 
 
+            if  (updateStatus == true && toggleOrganic == true) {
+
+                defaultColor.style.backgroundColor = color;
+                defaultColor.style.opacity = 1; 
+
+            } else if(updateStatus == true && toggleOrganic == false) {
+
+                console.log('runs')
+                defaultColor.style.backgroundColor = alsoColor;
+                defaultColor.style.opacity = 1; 
+
+            }
+
         } else if(updateStatus == true && toggleProgressive == false) {
             
             defaultColor.style.backgroundColor = color;
             let alsoDefaultColor = +defaultColor.style.opacity;
             defaultColor.style.opacity = alsoDefaultColor += 0.1;
-
-        } else if (updateStatus == true && toggleOrganic == true) {
-            
-            defaultColor.style.backgroundColor = newColor;
-            defaultColor.style.opacity = 1; 
 
         } else if (updateStatus == true) {
 
@@ -131,7 +139,7 @@ background-color: #fafafa;
         }
 
 }
-    square.addEventListener('mouseover', l3);
+square.addEventListener('mouseenter', (e) => l3(e,colorSelector()));
 }
 
 window.addEventListener('mousedown', function() {
