@@ -32,6 +32,25 @@ flex-direction: column;
 margin-top: 20px;
 }
 
+.background {
+position: fixed;
+display: flex;
+justify-content: center;
+align-items: center;
+display: flex;
+
+/* background-image: url("paper.gif"); */
+
+width: 1100px;
+height: 750px;
+background-image: url("https://yfile.news.yorku.ca/wp-content/uploads/2019/05/Cherry-trees-by-Calumet.jpg");
+
+margin-top: 50px;
+padding-bottom: 50px;
+opacity: 0.2;
+z-index: -1;
+}
+
 body {
 display: flex;
 justify-content: center;
@@ -68,7 +87,7 @@ padding: 0px;
 
 margin-right: -272.2px;
 margin-left: -272.2px;
-margin-bottom: 20.8px;
+margin-bottom: 62.9px;
 
 border-radius: 2px;
 transform: rotate(90deg);

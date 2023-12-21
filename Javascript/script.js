@@ -86,8 +86,13 @@ background-color: #fafafa;
         let alsoDefaultColor = +defaultColor.style.opacity;
         defaultColor.style.opacity = alsoDefaultColor += 0.1; // need to add new exception for default color, may need to define color here
         
-        } else if(toggleProgressive == true) {
-        document.getElementById(e.target.id).style.backgroundColor = 'green'; // SEE HERE
+        } else if(toggleProgressive == true && toggleOrganic == false) {
+        randomColor = Math.floor(Math.random() * 5);
+        alsoNewColor = colors[randomColor];
+
+        console.log(alsoNewColor); // color is not automatically appended
+        defaultColor.style.backgroundColor = alsoNewColor;
+        defaultColor.style.opacity = 1; 
         }
     }
     square.addEventListener('mousedown', l2);
