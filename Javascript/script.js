@@ -5,14 +5,7 @@ const wrapper = document.querySelector('.see-squares');
 alsoProg.addEventListener('click', progressive); 
 alsoOrganic.addEventListener('click', organic);
 
-function colorSelector(){
-console.log('called');
-
 let colors = ['LightSalmon', 'DeepSkyBlue', 'CornflowerBlue', 'LightCyan', 'LightSkyBlue'];
-let randomColor = Math.floor(Math.random() * 5);
-let newColor = colors[randomColor];
-return newColor;
-}
 
 let slider = document.querySelector("#alsoRange");
 let sqrMult = 32;
@@ -49,7 +42,6 @@ alsoProg.checked = false;
 
 if(toggleOrganic == true) {
 toggleOrganic = false;
-// see here*
 
 
 } else if(toggleOrganic == false) {
@@ -92,10 +84,10 @@ background-color: #fafafa;
 
         defaultColor.style.backgroundColor = color;
         let alsoDefaultColor = +defaultColor.style.opacity;
-        defaultColor.style.opacity = alsoDefaultColor += 0.1;
-
+        defaultColor.style.opacity = alsoDefaultColor += 0.1; // need to add new exception for default color, may need to define color here
+        
         } else if(toggleProgressive == true) {
-        document.getElementById(e.target.id).style.backgroundColor = color;
+        document.getElementById(e.target.id).style.backgroundColor = 'green'; // SEE HERE
         }
     }
     square.addEventListener('mousedown', l2);
@@ -115,13 +107,16 @@ background-color: #fafafa;
 
             } else if(updateStatus == true && toggleOrganic == false) {
 
-                console.log('runs')
-                defaultColor.style.backgroundColor = alsoColor;
+                randomColor = Math.floor(Math.random() * 5);
+                alsoNewColor = colors[randomColor];
+
+                console.log(alsoNewColor); // color is not automatically appended
+                defaultColor.style.backgroundColor = alsoNewColor;
                 defaultColor.style.opacity = 1; 
 
             } else if (updateStatus == true) {
 
-                defaultColor.style.backgroundColor = '#333333'; // UNIQUE EXCEPTION
+                defaultColor.style.backgroundColor = '#333333';
                 defaultColor.style.opacity = 1; 
     
             }
@@ -134,18 +129,20 @@ background-color: #fafafa;
 
         } else if (updateStatus == true) {
 
-            defaultColor.style.backgroundColor = '#333333'; // UNIQUE EXCEPTION
+            defaultColor.style.backgroundColor = '#333333';
             defaultColor.style.opacity = 1; 
 
         }
 
 }
-square.addEventListener('mouseenter', (e) => l3(e,colorSelector()));
+//square.addEventListener('mouseenter', (e) => l3(e,colorSelector()));
+square.addEventListener('mouseenter', l3);
 }
 
 window.addEventListener('mousedown', function() {
 updateStatus = true;
 }); 
+
 window.addEventListener('mouseup', function() {
 updateStatus = false;});
 
