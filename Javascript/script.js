@@ -23,8 +23,8 @@ let sqrSize = 1200 / sqrMult;
 let square ;
 let elements;
 
-let toggleProgressive;
-let toggleOrganic;
+let toggleProgressive = true;
+let toggleOrganic = true;
 
 let updateStatus;
 let color = '#333333';
@@ -32,7 +32,6 @@ let color = '#333333';
 // ---------------------------
 
 function progressive(){
-toggleProgressive = true;
 if(toggleProgressive == true) {
 toggleProgressive = false;
 
@@ -47,7 +46,6 @@ color = '#333333';
 // ---------------------------
 
 function organic(){
-toggleOrganic = true;
 if(toggleOrganic == true) {
 toggleOrganic = false;
 
@@ -132,7 +130,7 @@ background-color: #fafafa;
         }
 
 }
-    square.addEventListener('mouseenter', l3); // SEE HERE
+    square.addEventListener('mouseover', l3); // SEE HERE
 }
 
 window.addEventListener('mousedown', function() {
