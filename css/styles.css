@@ -1,4 +1,8 @@
+
 .main-wrapper {
+position: relative;
+z-index: 3;
+
 display: flex;
 justify-content: center;
 align-items: flex-start; 
@@ -22,11 +26,17 @@ outline: none;
 cursor: pointer;
 }
 
+input.organic, input.progressive {
+border-style: outset;
+}
+
 .organic:checked, .progressive:checked {
 background-color: #333333;
 }
 
 .buttons {
+font-family: "Trebuchet", sans-serif;
+
 display: flex;
 flex-direction: column;
 margin-top: 20px;
@@ -39,19 +49,24 @@ justify-content: center;
 align-items: center;
 display: flex;
 
-/* background-image: url("paper.gif"); */
-
 width: 1100px;
 height: 750px;
 background-image: url("https://yfile.news.yorku.ca/wp-content/uploads/2019/05/Cherry-trees-by-Calumet.jpg");
+border-radius: 5px;
 
 margin-top: 50px;
 padding-bottom: 50px;
-opacity: 0.2;
-z-index: -1;
+opacity: 0.4;
+z-index: 1;
+}
+
+.contains-slider {
+position: relative;
+z-index: 2;
 }
 
 body {
+background-color: lightgrey;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -70,20 +85,18 @@ border-right: 18px solid #333333;
 border-bottom: 2.8px solid #333333;
 border-left: 18px solid #333333;
 border-radius: 3px;
+cursor: crosshair;
 }
 
 .slider {
 -webkit-appearance: none;  
 appearance: none;
+
 width: 604px; 
 height: 10px;
 
 background: #999999;
-outline: none;
-opacity: 0.7;
--webkit-transition: .2s;
-transition: opacity .2s;
-padding: 0px;
+outline: none; /* ??? */
 
 margin-right: -272.2px;
 margin-left: -272.2px;
