@@ -5,9 +5,7 @@ height: 600px;
 background-color: white;
 z-index: 3;
 
-position: absolute;
-left: 30.2%;
-bottom: 23.2%;
+position: relative;
 }
 
 .main-wrapper {

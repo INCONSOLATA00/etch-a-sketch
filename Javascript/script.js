@@ -8,7 +8,7 @@ const wrapper = document.querySelector('.see-squares');
 alsoProg.addEventListener('click', progressive); 
 alsoOrganic.addEventListener('click', organic);
 
-let colors = ['LightSalmon', 'DeepSkyBlue', 'CornflowerBlue', 'LightCyan', 'LightSkyBlue'];
+let colors = ['#808080', '#999999', '#B3B3B3', '#CCCCCC', '#E6E6E6'];
 
 let slider = document.querySelector("#alsoRange");
 let sqrMult = 32;
