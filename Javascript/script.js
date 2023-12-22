@@ -89,7 +89,7 @@ background-color: #fafafa;
         let alsoDefaultColor = +defaultColor.style.opacity;
         defaultColor.style.opacity = alsoDefaultColor += 0.1;
         
-        } else if(toggleProgressive == true && toggleOrganic == true) { // see new exception
+        } else if(toggleProgressive == true && toggleOrganic == true) {
         
         defaultColor.style.backgroundColor = color;
         defaultColor.style.opacity = 1; 
@@ -107,7 +107,7 @@ background-color: #fafafa;
     
     function l3(e, alsoColor) {
 
-        let defaultColor = document.getElementById(e.target.id); // when mouseheld l3
+        let defaultColor = document.getElementById(e.target.id);
         if(updateStatus == true && toggleProgressive == true) {
 
             defaultColor.style.backgroundColor = color;
@@ -123,7 +123,7 @@ background-color: #fafafa;
                 randomColor = Math.floor(Math.random() * 5);
                 alsoNewColor = colors[randomColor];
 
-                console.log(alsoNewColor); // color is not automatically appended
+                console.log(alsoNewColor);
                 defaultColor.style.backgroundColor = alsoNewColor;
                 defaultColor.style.opacity = 1; 
 

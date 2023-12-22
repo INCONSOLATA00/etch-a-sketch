@@ -2,7 +2,9 @@
 
 width: 600px;
 height: 600px;
+
 padding-bottom: 1px;
+padding-right: 19px;
 
 background-color: white;
 z-index: 3;
@@ -87,7 +89,7 @@ height:  750px;
 .see-squares {
 display: flex;
 flex-wrap: wrap;
-width: 600px;
+width: 600.6px;
 height: 600px;
 
 border-style: solid;
@@ -107,7 +109,7 @@ width: 604px;
 height: 10px;
 
 background: #535353ad;
-outline: none; /* ??? */
+outline: none;
 
 margin-right: -272.2px;
 margin-left: -272.2px;
@@ -132,4 +134,5 @@ width: 10px;
 height: 25px; 
 background: #333333;
 cursor: pointer;
+border-radius: 0px;
 }
