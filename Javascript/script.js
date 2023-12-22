@@ -1,3 +1,6 @@
+// non-linear > organic*
+// progressive > additive*
+
 const alsoProg = document.querySelector('.progressive');
 const alsoOrganic = document.querySelector('.organic');
 const wrapper = document.querySelector('.see-squares');

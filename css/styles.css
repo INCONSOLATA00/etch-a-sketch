@@ -1,7 +1,18 @@
+.back-panel {
+
+width: 600px;
+height: 600px;
+background-color: white;
+z-index: 3;
+
+position: absolute;
+left: 30.2%;
+bottom: 23.2%;
+}
 
 .main-wrapper {
 position: relative;
-z-index: 3;
+z-index: 4;
 
 display: flex;
 justify-content: center;
@@ -66,7 +77,7 @@ z-index: 2;
 }
 
 body {
-background-color: lightgrey;
+background-color: #cdd6de;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -95,7 +106,7 @@ appearance: none;
 width: 604px; 
 height: 10px;
 
-background: #999999;
+background: #535353ad;
 outline: none; /* ??? */
 
 margin-right: -272.2px;
@@ -109,7 +120,7 @@ transform: rotate(90deg);
 .slider::-webkit-slider-thumb {
 -webkit-appearance: none; 
 appearance: none;
-width: 25px;
+width: 15px;
 height: 25px;
 background: #333333;
 cursor: pointer;
@@ -117,7 +128,7 @@ border-radius: 2.6px;
 }
 
 .slider::-moz-range-thumb {
-width: 25px; 
+width: 10px; 
 height: 25px; 
 background: #333333;
 cursor: pointer;
